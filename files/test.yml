@@ -1,0 +1,10 @@
+---
+- name: "Test Ansible Locally"
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: "Check Operating System"
+      shell: "uname -o"
+      register: "output"
+
+    - debug: var=output.stdout_lines
